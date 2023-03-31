@@ -62,7 +62,7 @@ export class News extends  React.Component {
                 <h2 className='text-center'>Top Headlines</h2>
                 { this.state.loading && <Spinner/>}
                 <div className="row">
-                {!this.state.loading && this.state.articles.map((element)=>{
+                {!this.state.loading && this.state.articles?.map((element)=>{
                     return <div className="col-md-4" key={element.url}>
                         <NewsItem  title={element.title ? element.title.slice(0, 45): ""} description={element.description ? element.description.slice(0, 70): ""} imageUrl={element.urlToImage ? element.urlToImage : ""} url={element.url ? element.url : ""} author={element.author} date={element.publishedAt} source={element.source.name}/>
                     </div>
